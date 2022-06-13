@@ -3,33 +3,31 @@ int main (){
     char str[100] , state ='A';
     printf("Enter any String Over {0,1}\n");
     scanf("%s",str);
-
-    for (int i = 0; str[i]!=0; i++)
+    for (int i = 0; str[i]!='\0'; i++)
     {
         switch (state)
         {
         case 'A':
             if(str[i]=='0'){
-                state = 'B';
+                state = 'A';
             }
-            else if(str[i]=='1')
+            else if (str[i]=='1')
             {
-                state ='E';
+                state = 'B';
             }
             else{
                 printf("Invalid String");
                 return 0;
             }
             break;
-
+    
         case 'B':
-            if(str[i]=='0')
+            if(str[i]=='0'){
+                state = 'B';
+            }
+            else if (str[i]=='1')
             {
                 state = 'C';
-            }
-            else if(str[i]=='1')
-            {
-                state = 'B';
             }
             else{
                 printf("Invalid String");
@@ -38,9 +36,8 @@ int main (){
             break;
 
         case 'C':
-            if(str[i]=='0')
-            {
-                state = 'B';
+            if(str[i]=='0'){
+                state = 'C';
             }
             else if (str[i]=='1')
             {
@@ -51,40 +48,26 @@ int main (){
                 return 0;
             }
             break;
-            
-        case 'D': 
-            if(str[i]=='0'){
-                state = 'B';
-            }
-            else if (str[i]=='1')
-            {
+        
+        case 'D':
+            if(str[i]=='0'||str[i]=='1'){
                 state = 'D';
-            }
-            else {
-                printf("Invalid String");
-                return 0;
-            }
-            break;
-
-        case 'E':
-            if(str[i]=='0'){
-                state = 'B';
-            }
-            else if(str[i]=='1'){
-                state = 'E';
             }
             else{
                 printf("Invalid String");
                 return 0;
             }
             break;
+        
         }
     }
-    if(state=='C'||state=='D'){
-        printf("String is accepted by the Machine");
+    if(state=='D'){
+        printf("String is accpeted by the Machine");
     }
     else{
-        printf("String is not accepted by the Machine");
+        printf("String Is not accpted");
     }
-    return 0; 
+
+    return 0;
+    
 }

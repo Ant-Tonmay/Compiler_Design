@@ -48,7 +48,7 @@ int main(){
 	}
     if(state=='C')
     {
-        printf("String is accepted by the Matchine");
+        printf("String is accepted by the Machine");
     }
 
     else {
