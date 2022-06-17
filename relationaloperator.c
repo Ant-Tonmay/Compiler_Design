@@ -2,8 +2,8 @@
 #include <stdio.h> 
 #include <stdlib.h>
 
-void showIdentifiers(int arr[][2], int row, char str[]) {
-  printf("Identifiers are: \n");
+void showIdentifiers(int arr[][2], int row, const char str[]) {
+  printf("Relational Operators are: \n");
   for (int i = 0; i < row; i++) {
     for (int j = arr[i][0]; j <= arr[i][1]; j++) {
       printf("%c", str[j]);
@@ -35,20 +35,14 @@ bool isBitwise(char ch){
 }
 
 
-void relationalOperator(){
-  
-}
 
+////////
 
-int main() {
-
-char str[100] , state ='A';
-int array[100][2] , row = 0 , start = 0;
-printf("Enter a Line of Code:\n");
-scanf("%[^\n]s",str);
-
-
-for(int i=0 ; str[i]!='\0' ; i++)
+void relationalOperator(const char* str){
+  printf("Input string is : %s \n",str);
+  char  state ='A';
+  int array[100][2] , row = 0 , start = 0;
+  for(int i=0 ; str[i]!='\0' ; i++)
 {
   switch (state) {
     case 'A':
@@ -123,7 +117,24 @@ for(int i=0 ; str[i]!='\0' ; i++)
   }
 
 }
-  showIdentifiers(array, row, str);
 
+showIdentifiers(array,row,str);
+  
+}
+
+void endToEndTest(){
+
+relationalOperator("if(a==b)||(c>=d");
+relationalOperator("if(a=>!=b)||(c===d)||(c==d");
+relationalOperator("if(a!=b)||(c>=d");
+relationalOperator("if(a<=b)||(c>=d)||(a==c)||(a>b)||(a<c)||(a==!>+d)");
+
+
+}
+
+int main() {
+
+endToEndTest();
+ 
 
 }

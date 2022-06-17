@@ -69,6 +69,7 @@ void goToStateC(int array[][2], const char *str, int *row, int i, int start) {
 int main() { endToEndTest(); }
 
 int identifierDetector(const char *str) {
+  printf("Input String is: %s \n",str);
   int array[100][2];
   int start = 0;
   int row = 0;
