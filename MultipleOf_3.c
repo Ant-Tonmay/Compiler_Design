@@ -26,10 +26,10 @@ for (int i = 0; str[i]!='\0'; i++)
     case 'B':
         if(str[i]=='0')
         {
-            state='D';
+            state='C';
         }
         else if(str[i]=='1'){
-            state = 'C';
+            state = 'A';
         }
         else{
              printf("Invalid String");
@@ -39,59 +39,10 @@ for (int i = 0; str[i]!='\0'; i++)
     
     case 'C':
         if(str[i]=='0'){
-            state = 'C';
-        }
-        else if(str[i]=='1'){
             state = 'B';
         }
-        else {
-            printf("Invalid String");
-             return 0;
-        }
-        break;
-    
-    case 'D':
-        if(str[i]=='0'){
-            state = 'E';
-        }
-        else if(str[i]=='1'){
-            state = 'F';
-        }
-        else {
-            printf("Invalid String");
-             return 0;
-        }
-        break;
-
-    case 'E':
-        if(str[i]=='0'){
-            state = 'D';
-        }
         else if(str[i]=='1'){
             state = 'C';
-        }
-        else {
-            printf("Invalid String");
-             return 0;
-        }
-        break;
-
-    case 'F':
-        if(str[i]=='0'){
-            state = 'E';
-        }
-        else if(str[i]=='1'){
-            state = 'G';
-        }
-        else {
-            printf("Invalid String");
-             return 0;
-        }
-        break;
-
-    case 'G':
-        if(str[i]=='0'||str[i]=='1'){
-            state = 'G';
         }
         else {
             printf("Invalid String");
@@ -100,7 +51,7 @@ for (int i = 0; str[i]!='\0'; i++)
         break;
     }
 }
-    if(state=='C'||state=='A'){
+    if(state=='A'){
         printf("String Is accepted by the Machine");
     }
     else {

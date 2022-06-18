@@ -34,10 +34,6 @@ bool isBitwise(char ch){
   return (ch=='|' || ch=='&');
 }
 
-
-
-////////
-
 void relationalOperator(const char* str){
   printf("Input string is : %s \n",str);
   char  state ='A';
@@ -119,22 +115,15 @@ void relationalOperator(const char* str){
 }
 
 showIdentifiers(array,row,str);
-  
 }
 
 void endToEndTest(){
-
 relationalOperator("if(a==b)||(c>=d");
 relationalOperator("if(a=>!=b)||(c===d)||(c==d");
 relationalOperator("if(a!=b)||(c>=d");
 relationalOperator("if(a<=b)||(c>=d)||(a==c)||(a>b)||(a<c)||(a==!>+d)");
-
-
 }
 
 int main() {
-
 endToEndTest();
- 
-
 }
